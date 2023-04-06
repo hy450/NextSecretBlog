@@ -16,6 +16,7 @@ export default async function Home() {
     <main className="max-w-screen-xl mx-auto">
       <RecentBlogs src={recents} />
       <FavoriteBlogs src={favorites} />
+      <div className="mb-[100px]"></div>
     </main>
   );
 }

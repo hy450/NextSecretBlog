@@ -7,10 +7,10 @@ const ContactPage = () => {
   };
 
   return (
-    <main className="my-auto h-[calc(100vh-64px)]">
+    <main className="my-auto h-[calc(100vh-64px)] max-w-screen-xl mx-auto">
       <div className="flex h-full justify-center items-center">
-        <div className="w-2/5">
-          <h1 className="text-4xl text-black text-center">
+        <div className="w-2/5 h-full flex justify-center items-center">
+          <h1 className="text-4xl text-black text-center text-teal-800">
             함께
             <br /> 만들어 가요
           </h1>
