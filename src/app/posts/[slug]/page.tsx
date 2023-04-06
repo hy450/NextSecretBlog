@@ -35,4 +35,9 @@ const PostDetailPage = async ({ params }: Props) => {
   );
 };
 
+export async function generateStaticParams() {
+  const blogs = await blogRepository.getBlogs();
+  return blogs.map((blog) => ({ params: { slug: blog.id } }));
+}
+
 export default PostDetailPage;

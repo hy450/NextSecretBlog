@@ -13,6 +13,7 @@ class JsonDataSource {
   readData = async () => {
     //const filePath = path.join(process.cwd(),"data",'blogs.json')
     const filePath = path.join(process.cwd(), ...this.jsonPaths);
+    console.log(filePath);
     const data = await fs.readFile(filePath, "utf8");
     return JSON.parse(data);
   };
