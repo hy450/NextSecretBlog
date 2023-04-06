@@ -3,6 +3,34 @@ const nextConfig = {
   experimental: {
     appDir: true,
   },
-}
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "https://github.com",
+      },
+      {
+        protocol: "https",
+        hostname: "graph.facebook.com",
+      },
+    ],
+  },
 
-module.exports = nextConfig
+  // async redirects() {
+  //   return [
+  //     {
+  //       source: "/posts",
+  //       destination: "/",
+  //       permanent: false,
+  //     },
+  //   ];
+  // },
+
+  webpack: (config) => {
+    config.resolve.fallback = { fs: false };
+
+    return config;
+  },
+};
+
+module.exports = nextConfig;
