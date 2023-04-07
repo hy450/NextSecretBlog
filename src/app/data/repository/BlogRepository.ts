@@ -15,8 +15,10 @@ export async function getBlog(id: string): Promise<BlogData | undefined> {
 
 export async function getBlogContent(name: string): Promise<string | null> {
   const filePath = path.join(process.cwd(), "data", "blogs", name);
+  console.log(filePath);
   try {
     const data = await fs.readFile(filePath, "utf8");
+    console.log(data);
     return data;
   } catch (error) {
     return null;

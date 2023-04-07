@@ -17,7 +17,7 @@ const PostDetailPage = async ({ params }: Props) => {
   }
 
   const markdown = await getBlogContent(blog.contentPath ?? "");
-  //console.log(markdown);
+  console.log(markdown);
   return (
     <article className="max-w-screen-xl mx-auto pt-2">
       <h1 className="py-4 text-2xl font-bold">{blog.title}</h1>
