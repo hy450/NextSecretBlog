@@ -4,7 +4,7 @@
     "title": "Android Image Caching",
     "summary": "데이터에 대한 향후 요청에 신속하게 대응 할 수 있도록 데이터를 로컬에 저장하는 프로세스",
     "imagePath": "italy-mountains-dawn-daybreak-147411.jpeg",
-    "contentPath": "android-image-caching.md",
+    "contentPath": "android-Image-caching.md",
     "tags": ["android"],
     "writer": "Han Yong",
     "createdAt": 1680678051,

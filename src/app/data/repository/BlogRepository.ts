@@ -18,7 +18,6 @@ export async function getBlogContent(name: string): Promise<string | null> {
   console.log(filePath);
   try {
     const data = await fs.readFile(filePath, "utf8");
-    console.log(data);
     return data;
   } catch (error) {
     return null;

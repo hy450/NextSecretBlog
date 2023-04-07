@@ -7,7 +7,6 @@ import remarkGfm from "remark-gfm";
 import rehypeRaw from "rehype-raw";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { materialDark } from "react-syntax-highlighter/dist/cjs/styles/prism";
-import { BlogData } from "@/app/data/model/BlogData";
 
 type Props = {
   markdown: string | null;
@@ -16,7 +15,7 @@ type Props = {
 const MarkDownContentView = ({ markdown }: Props) => {
   if (!markdown) {
     // empty page
-    return <></>;
+    return <div>내용없음.</div>;
   }
   return (
     <ReactMarkdown
