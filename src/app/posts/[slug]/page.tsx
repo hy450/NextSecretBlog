@@ -40,6 +40,4 @@ export async function generateStaticParams() {
   return blogs.map((blog) => ({ params: { slug: blog.id } }));
 }
 
-export async function generateStaticProps() {}
-
 export default PostDetailPage;
