@@ -16,7 +16,7 @@ const PostDetailPage = async ({ params }: Props) => {
     notFound();
   }
 
-  const markdown = await blogRepository.getBlogContent(blog.contentPath ?? "");
+  //const markdown = await blogRepository.getBlogContent(blog.contentPath ?? "");
   //console.log(markdown);
   return (
     <article className="max-w-screen-xl mx-auto pt-2">
@@ -30,7 +30,7 @@ const PostDetailPage = async ({ params }: Props) => {
         className="mx-auto py-6 max-w-screen-lg rounded-xl object-fit"
       />
 
-      <MarkDownContentView markdown={markdown} />
+      {/* <MarkDownContentView markdown={markdown} /> */}
     </article>
   );
 };
@@ -39,5 +39,7 @@ export async function generateStaticParams() {
   const blogs = await blogRepository.getBlogs();
   return blogs.map((blog) => ({ params: { slug: blog.id } }));
 }
+
+export async function generateStaticProps() {}
 
 export default PostDetailPage;
