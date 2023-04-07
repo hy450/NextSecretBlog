@@ -55,3 +55,13 @@ export async function getBlog(id: string): Promise<BlogData | undefined> {
   const blogs = await getBlogs();
   return blogs.find((blog: BlogData) => blog.id === id);
 }
+
+export async function getBlogContent(name: string): Promise<string | null> {
+  const filePath = path.join(process.cwd(), "data", "blogs", name);
+  try {
+    const data = await fs.readFile(filePath, "utf8");
+    return data;
+  } catch (error) {
+    return null;
+  }
+}
