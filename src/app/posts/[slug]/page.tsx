@@ -1,5 +1,4 @@
 import { notFound } from "next/navigation";
-import { blogRepository } from "@/app/data/repository";
 import Image from "next/image";
 import MarkDownContentView from "@/app/components/markdonw_content";
 import { getBlog, getBlogContent } from "@/app/data/repository/BlogRepository";
