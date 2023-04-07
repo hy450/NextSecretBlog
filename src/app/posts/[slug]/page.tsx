@@ -1,7 +1,11 @@
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import MarkDownContentView from "@/app/components/markdonw_content";
-import { getBlog, getBlogContent } from "@/app/data/repository/BlogRepository";
+import {
+  getBlog,
+  getBlogContent,
+  getBlogs,
+} from "@/app/data/repository/BlogRepository";
 
 type Props = {
   params: {
@@ -35,9 +39,9 @@ const PostDetailPage = async ({ params }: Props) => {
   );
 };
 
-// export async function generateStaticParams() {
-//   const blogs = await blogRepository.getBlogs();
-//   return blogs.map((blog) => ({ params: { slug: blog.id } }));
-// }
+export async function generateStaticParams() {
+  const blogs = await getBlogs();
+  return blogs.map((blog) => ({ params: { slug: blog.id } }));
+}
 
 export default PostDetailPage;
