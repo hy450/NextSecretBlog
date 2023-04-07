@@ -44,3 +44,14 @@ export class BlogRepositoryImpl implements BlogRepository {
     }
   }
 }
+
+export async function getBlogs(): Promise<BlogData[]> {
+  const filePath = path.join(process.cwd(), "data", "blogs.json");
+  const data = await fs.readFile(filePath, "utf8");
+  return JSON.parse(data);
+}
+
+export async function getBlog(id: string): Promise<BlogData | undefined> {
+  const blogs = await getBlogs();
+  return blogs.find((blog: BlogData) => blog.id === id);
+}

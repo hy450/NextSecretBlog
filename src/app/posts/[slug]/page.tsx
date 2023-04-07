@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import { blogRepository } from "@/app/data/repository";
 import Image from "next/image";
 import MarkDownContentView from "@/app/components/markdonw_content";
+import { getBlog } from "@/app/data/repository/BlogRepository";
 
 type Props = {
   params: {
@@ -11,7 +12,7 @@ type Props = {
 
 // This page is post detail page
 const PostDetailPage = async ({ params }: Props) => {
-  const blog = await blogRepository.getBlog(params.slug);
+  const blog = await getBlog(params.slug);
   if (!blog) {
     notFound();
   }
